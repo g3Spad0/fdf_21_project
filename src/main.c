@@ -15,5 +15,10 @@ int         main(int argc, char **argv)
     main = init(str);
     free(str);
     // TODO render
+    init_display(main);
+        printf("sfgushfuskhfuskfhu\n");
+
+    display(main);
+    mlx_loop(main->mlx_ptr);
     return (0);
 }

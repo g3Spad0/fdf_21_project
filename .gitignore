@@ -50,3 +50,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# start of my excludes
+.vscode/
+minilibx_macos/

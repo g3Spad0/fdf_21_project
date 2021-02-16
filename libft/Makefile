@@ -63,18 +63,22 @@ CFLAGS = -I $(HEADER_DIR) #-Wall -Wextra -Werror
 OBJ = $(patsubst %.c,%.o,$(SRC))
 
 %.o: %.c $(HEADER)
-	gcc -c $(CFLAGS) $< -o $@
+	@gcc -c $(CFLAGS) $< -o $@
+	@printf "."
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@printf "|"
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
+	@printf "Libft clean\n"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@printf "Libft fclean\n"
 
 re: fclean all

@@ -2,7 +2,7 @@
 
 void            ft_help(void)
 {
-    ft_printf("TODO write help");
+    ft_printf("TODO write help\n");
     exit(1);
 }
 
