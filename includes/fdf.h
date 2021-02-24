@@ -59,12 +59,12 @@ typedef struct			s_point
 typedef struct			s_camera
 {
 	t_vector_4			position;
+	t_vector_4			w_position;
 	t_vector_4			r_axis;
 	t_vector_4			u_axis;
 	t_vector_4			f_axis;
-	t_vector_4			wx_axis;
-	t_vector_4			wy_axis;
-	t_vector_4			wz_axis;
+	t_matrix_4			rotation;
+	t_matrix_4			transition;
 }						t_camera;
 
 typedef struct		s_main
@@ -78,6 +78,7 @@ typedef struct		s_main
 	t_vector_4		**vertexes_to_display;
 	t_point			**points;
 	t_camera		camera;
+	t_vector_4		w_axises[3];
 	void			*display_img;
 	char			*display_buff;
 }					t_main;
@@ -94,9 +95,14 @@ t_matrix_4			mult_m_4(t_matrix_4 m1, t_matrix_4 m2);
 t_vector_4			vector_4_for(float x, float y, float z, float w);
 void				get_vertexes_to_render(t_main *main);
 void    			init_display(t_main *main);
-void				line(t_main *main, t_point p1, t_point p2, int color);
-void	print_vertexes(t_vector_4 **vertexes, int array_size, int item_size);
-void	print_matrix(t_matrix_4 m);
+t_matrix_4  		get_ur_matrix(float angle);
+t_matrix_4  		get_rr_matrix(float angle);
+void				rotate_camera(t_main *main, t_matrix_4 r_matr);
+void    			move_camera(t_main *main, int axis, float val);
+void			line(t_main *main, t_point p1, t_point p2, int color);
+void			print_vertexes(t_vector_4 **vertexes, int array_size, int item_size);
+void			print_vector(t_vector_4 v);
+void			print_matrix(t_matrix_4 m);
 
 
 

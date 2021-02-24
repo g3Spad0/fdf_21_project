@@ -25,6 +25,7 @@ SRC				= src/main.c \
 				  src/renderer/lines.c \
 				  src/renderer/functions.c \
 				  src/renderer/renderer.c \
+				  src/renderer/camera.c \
 				  src/renderer/display.c
 
 

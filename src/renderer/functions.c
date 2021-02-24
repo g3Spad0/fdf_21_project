@@ -25,13 +25,10 @@ t_vector_4		mult_vm_4(t_vector_4 v, t_matrix_4 m)
 		while (j < 4)
 		{
 			res.arr[i] += v.arr[j] * m.arr[j][i];
-			printf("(%.2f, %.2f)", v.arr[j], m.arr[j][i]);
 			j++;
 		}
-		printf("  ");
 		i++;
 	}
-	printf("\n");
 	return res;
 }
 
@@ -60,6 +57,13 @@ t_matrix_4		mult_m_4(t_matrix_4 m1, t_matrix_4 m2)
 		i++;
 	}
 	return res;
+}
+
+void	print_vector(t_vector_4 v)
+{
+	for (int i = 0; i < 4; i++)
+		printf("%.2f ", v.arr[i]);
+	printf("\n");
 }
 
 void	print_matrix(t_matrix_4 m)

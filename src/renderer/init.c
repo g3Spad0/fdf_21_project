@@ -21,21 +21,20 @@ void    get_vertexes(t_main *main)
 	{
 		j = -1;
 		while (++j < main->item_size)
-		{
 			main->vertexes[i][j] = vector_4_for(j, i, 0.2 * main->items[i][j], 1.0);
-			printf("%d, ", main->items[i][j]);
-		}
-		printf("\n");
 	}
-	printf("\n");
 }
 
 void    init_camera(t_main *main)
 {
 	main->camera.position = vector_4_for(9, 11, 10, 1);
+	main->camera.w_position = vector_4_for(0, 0, 0, 1);
 	main->camera.r_axis = vector_4_for(1, 0, 0, 1);
 	main->camera.u_axis = vector_4_for(0, -0.707, 0.707, 1);
 	main->camera.f_axis = vector_4_for(0, -0.707, -0.707, 1);
+	main->w_axises[0] = vector_4_for(1, 0, 0, 1);
+	main->w_axises[1] = vector_4_for(0, 1, 0, 1);
+	main->w_axises[2] = vector_4_for(0, 0, 1, 1);
 }
 
 void    init_display(t_main *main)
